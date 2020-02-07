@@ -1,0 +1,23 @@
+{
+    "qa_equipment_schema_version": "1.0",
+    "clients": [
+	{
+	    "hostname": "myclient.my.domain.com",
+	    "root_password": "my_password"
+	}
+    ],
+    "clusters": [
+	{
+	    "name": "my-cluster",
+	    "cluster_type": "hardware",
+	    "admin_username": "admin",
+	    "node_hostname_list": [
+		"node1.my.domain.com",
+		"node2.my.domain.com",
+		"node3.my.domain.com"
+	    ],
+	    "mgmt_vip_addr": "xxx.xxx.xxx.xxx",
+	    "admin_password": "my_admin_password"
+	}
+    ]
+}
