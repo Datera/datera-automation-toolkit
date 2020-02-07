@@ -1,0 +1,96 @@
+{
+  "users": {
+    "admin": {
+      "password": "my_admin_pass"
+    }
+  },
+  "system": {
+      "name": "my-cluster",
+      "callhome_enabled": false,
+      "http_proxy": {
+	  "enabled": false
+      },
+      "access_interface_aggr_type": "single",
+      "internal_interface_aggr_type": "single",
+      "interface_aggregation_mode": "balance-alb",
+      "dns": <details>,
+      "ntp_servers": [
+	  "ntp.my.domain.com"
+      ],
+      "network": {
+	  "internal_network": {
+	      "network_paths": {
+		  "internal_1": {
+		      "vlan": 0,
+		      "start_ip": "xxx.xx.xxx.x",
+		      "netmask": 25,
+		      "range": 100,
+		      "mtu": 4096
+		  },
+		  "internal_2": {
+		      "vlan": 0,
+		      "start_ip": "xxx.xx.xxx.xxx",
+		      "netmask": 25,
+		      "range": 100,
+		      "mtu": 4096
+		  }
+	      }
+	  },
+	  "mgmt_vip": {
+	      "network_paths": {
+		  "mgmt_1": {
+		      "ip": "xxx.xx.x.xxx",
+		      "vlan": 0,
+		      "netmask": 22,
+		      "mtu": 1500
+		  }
+	      }
+	  },
+	  "access_vip": {
+	      "network_paths": {
+		  "access_1": {
+		      "ip": "xxx.xx.xxx.x",
+		      "vlan": 0,
+		      "netmask": 24,
+		      "mtu": 9000
+		  },
+		  "access_2": {
+		      "ip": "xxx.xx.xxx.x",
+		      "vlan": 0,
+		      "netmask": 24,
+		      "mtu": 9000
+		  }
+	      }
+	  },
+	  "mapping": {
+	      "internal_1": "netB1",
+	      "internal_2": "netB2",
+	      "mgmt_1": "mgt1",
+	      "access_1": "netA1",
+	      "access_2": "netA2"
+	  }
+      },
+      "network_devices": []
+  },
+    "version": "1.0.0.0",
+    "access_network_ip_pools": {
+	"default": {
+	    "network_paths": {
+		"access_2": {
+		    "vlan": 0,
+		    "start_ip": "xxx.xx.xxx.x",
+		    "netmask": 24,
+		    "range": 195,
+		    "mtu": 9000
+		},
+		"access_1": {
+		    "vlan": 0,
+		    "start_ip": "xxx.xx.xxx.x"
+		    "netmask": 24,
+		    "range": 195,
+		    "mtu": 9000
+		}
+	    }
+	}
+    }
+}
